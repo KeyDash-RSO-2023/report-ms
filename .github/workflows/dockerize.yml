@@ -37,5 +37,5 @@ jobs:
           file: ./Dockerfile_with_maven_build
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/reports:latest
-          
+
 #          tags: ${{ secrets.DOCKER_USERNAME }}/users:${{ steps.current-time.outputs.formattedTime }}
