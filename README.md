@@ -50,7 +50,7 @@ Please read `CONTRIBUTING.md` for details on our code of conduct, and the proces
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](repository-url/tags).
 
 ## Authors
-- **Tilen ^ Alen**
+- **Tilen & Alen**
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
