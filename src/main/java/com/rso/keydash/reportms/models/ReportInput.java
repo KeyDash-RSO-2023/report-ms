@@ -1,51 +1,25 @@
-package com.rso.keydash.reportms.entities;
-
-import jakarta.persistence.*;
+package com.rso.keydash.reportms.models;
 
 import java.time.Instant;
 
-@Entity
-public class ReportEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
-
-    @Column(name = "typing_session_id", nullable = false)
+public class ReportInput {
     private long typingSessionId;
 
-    @Column(name = "language")
     private String language;
 
-    @Column(name = "length")
     private Integer length;
 
-    @Column(name = "punctuation")
     private Boolean punctuation;
 
-    @Column (name = "start_time")
     private Instant startTime;
 
-    @Column (name = "end_time")
     private Instant endTime;
 
-    @Column (name = "wpm")
     private Double wpm;
 
-    @Column (name = "accuracy")
     private Double accuracy;
 
-    @Column (name = "status")
     private String status;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public long getTypingSessionId() {
         return typingSessionId;
