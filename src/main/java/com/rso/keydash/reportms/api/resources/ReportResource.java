@@ -1,4 +1,4 @@
-package com.rso.keydash.reportms.api;
+package com.rso.keydash.reportms.api.resources;
 
 import com.rso.keydash.reportms.converters.ReportConverter;
 import com.rso.keydash.reportms.entities.ReportEntity;
