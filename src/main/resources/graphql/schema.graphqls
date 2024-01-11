@@ -1,0 +1,23 @@
+type Report {
+    id: Int
+    typingSessionId: ID
+    language: String
+    length: Int
+    punctuation: Boolean
+    startTime: String
+    endTime: String
+    wpm: Float
+    accuracy: Float
+    status: String
+}
+
+type Query {
+    report(id: Int): Report
+    reports: [Report]
+}
+
+type Mutation {
+    createReport(typingSessionId: ID, language: String, length: Int, punctuation: Boolean, startTime: String, endTime: String, wpm: Float, accuracy: Float, status: String): Report
+    updateReport(id: Int, typingSessionId: ID, language: String, length: Int, punctuation: Boolean, startTime: String, endTime: String, wpm: Float, accuracy: Float, status: String): Report
+    deleteReport(id: Int): Report
+}

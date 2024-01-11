@@ -6,6 +6,8 @@ import com.rso.keydash.reportms.interfaces.ReportRepository;
 import com.rso.keydash.reportms.models.Report;
 import com.rso.keydash.reportms.models.ReportInput;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +31,23 @@ public class ReportResource {
 
         List<ReportEntity> reports = reportRepository.findAll();
         return ResponseEntity.ok(reports);
+    }
+
+    @SchemaMapping(typeName = "Query", value = "report")
+    public Report findById(@Argument Integer id) {
+        ReportEntity report = reportRepository.findById(id).orElse(null);
+
+        if (report == null) {
+            return null;
+        }
+
+        return ReportConverter.toModel(report);
+    }
+
+
+    @SchemaMapping(typeName = "Query", value = "reports")
+    public List<Report> findAll() {
+        return ReportConverter.toModels(reportRepository.findAll());
     }
 
     @GetMapping("/{reportId}")
@@ -81,5 +100,12 @@ public class ReportResource {
         reportRepository.delete(report);
 
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/graphql")
+    public ResponseEntity<Report> reportById(Integer id) {
+        Report report = Report.getById(id);
+
+        return ResponseEntity.ok(report);
     }
 }

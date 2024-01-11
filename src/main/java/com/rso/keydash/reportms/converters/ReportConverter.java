@@ -4,6 +4,9 @@ import com.rso.keydash.reportms.entities.ReportEntity;
 import com.rso.keydash.reportms.models.Report;
 import com.rso.keydash.reportms.models.ReportInput;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class ReportConverter {
 
     public static ReportEntity toEntity(ReportInput report) {
@@ -33,5 +36,9 @@ public class ReportConverter {
         model.setAccuracy(entity.getAccuracy());
         model.setStatus(entity.getStatus());
         return model;
+    }
+
+    public static List<Report> toModels(List<ReportEntity> entities) {
+        return entities.stream().map(ReportConverter::toModel).collect(Collectors.toList());
     }
 }

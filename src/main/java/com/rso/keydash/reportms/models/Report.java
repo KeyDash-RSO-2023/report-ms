@@ -1,6 +1,8 @@
 package com.rso.keydash.reportms.models;
 
 import java.time.Instant;
+import java.util.Arrays;
+import java.util.List;
 
 public class Report {
     private Integer id;
@@ -22,6 +24,32 @@ public class Report {
     private Double accuracy;
 
     private String status;
+
+    public Report() {
+    }
+
+    public Report(Integer id, long typingSessionId, String language, Integer length, Boolean punctuation, Instant startTime, Instant endTime, Double wpm, Double accuracy, String status) {
+        this.id = id;
+        this.typingSessionId = typingSessionId;
+        this.language = language;
+        this.length = length;
+        this.punctuation = punctuation;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.wpm = wpm;
+        this.accuracy = accuracy;
+        this.status = status;
+    }
+
+    private static List<Report> reports = Arrays.asList(
+            new Report(1, 123, "en", 123, true, Instant.now(), Instant.now(), 123.0, 123.0, "finished"),
+            new Report(2, 123, "en", 123, true, Instant.now(), Instant.now(), 123.0, 123.0, "finished"),
+            new Report(3, 123, "en", 123, true, Instant.now(), Instant.now(), 123.0, 123.0, "finished")
+    );
+
+    public static Report getById(Integer id) {
+        return reports.stream().filter(report -> report.getId().equals(id)).findFirst().orElse(null);
+    }
 
     public Integer getId() {
         return id;
