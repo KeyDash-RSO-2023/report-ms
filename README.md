@@ -43,6 +43,9 @@ This service is part of the KeyDash microservices architecture and interacts wit
 - Frontend Application
 - Other Microservices (Authentication, User Profile, etc.)
 
+## Swagger
+For API docs UI, use path `/swagger-ui/index.html`, for example http://localhost:8080/swagger-ui/index.html. 
+
 ## Contributing
 Please read `CONTRIBUTING.md` for details on our code of conduct, and the process for submitting pull requests to us.
 
