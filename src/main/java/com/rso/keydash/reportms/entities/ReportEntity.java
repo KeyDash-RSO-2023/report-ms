@@ -15,6 +15,9 @@ public class ReportEntity {
     @Column(name = "typing_session_id", nullable = false)
     private long typingSessionId;
 
+    @Column(name = "user_id", nullable = false)
+    private int userId;
+
     @Column(name = "language")
     private String language;
 
@@ -117,5 +120,13 @@ public class ReportEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

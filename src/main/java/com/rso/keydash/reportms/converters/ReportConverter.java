@@ -12,6 +12,7 @@ public class ReportConverter {
     public static ReportEntity toEntity(ReportInput report) {
         ReportEntity entity = new ReportEntity();
         entity.setTypingSessionId(report.getTypingSessionId());
+        entity.setUserId(report.getUserId());
         entity.setLanguage(report.getLanguage());
         entity.setLength(report.getLength());
         entity.setPunctuation(report.getPunctuation());
@@ -27,6 +28,7 @@ public class ReportConverter {
         Report model = new Report();
         model.setId(entity.getId());
         model.setTypingSessionId(entity.getTypingSessionId());
+        model.setUserId(entity.getUserId());
         model.setLanguage(entity.getLanguage());
         model.setLength(entity.getLength());
         model.setPunctuation(entity.getPunctuation());

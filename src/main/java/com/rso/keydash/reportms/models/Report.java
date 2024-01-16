@@ -9,6 +9,8 @@ public class Report {
 
     private long typingSessionId;
 
+    private int userId;
+
     private String language;
 
     private Integer length;
@@ -129,5 +131,13 @@ public class Report {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }
