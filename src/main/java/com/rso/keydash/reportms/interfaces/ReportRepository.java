@@ -4,9 +4,12 @@ import com.rso.keydash.reportms.entities.ReportEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface ReportRepository extends JpaRepository<ReportEntity, Integer> {
     // You can define custom query methods here
+
+    List<ReportEntity> findByUserId(Integer userId);
 }

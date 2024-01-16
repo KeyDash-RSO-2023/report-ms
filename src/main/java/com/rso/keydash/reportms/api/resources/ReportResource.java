@@ -50,6 +50,11 @@ public class ReportResource {
         return ReportConverter.toModels(reportRepository.findAll());
     }
 
+    @SchemaMapping(typeName = "Query", value = "reportsByUser")
+    public List<Report> findByUserId(@Argument Integer userId) {
+        return ReportConverter.toModels(reportRepository.findByUserId(userId));
+    }
+
     @GetMapping("/{reportId}")
     public ResponseEntity<Report> getReport(@PathVariable Integer reportId) {
         ReportEntity report = reportRepository.findById(reportId).orElse(null);

@@ -12,10 +12,10 @@ public class ReportEntity {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "typing_session_id", nullable = false)
+    @Column(name = "typing_session_id", nullable = true)
     private long typingSessionId;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "user_id")
     private int userId;
 
     @Column(name = "language")

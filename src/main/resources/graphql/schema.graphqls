@@ -1,6 +1,7 @@
 type Report {
     id: Int
     typingSessionId: ID
+    userId: Int
     language: String
     length: Int
     punctuation: Boolean
@@ -14,6 +15,7 @@ type Report {
 type Query {
     report(id: Int): Report
     reports: [Report]
+    reportsByUser(userId: Int): [Report]
 }
 
 type Mutation {
