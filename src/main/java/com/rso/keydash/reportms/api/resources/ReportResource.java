@@ -54,6 +54,8 @@ public class ReportResource {
     public ResponseEntity<Report> getReport(@PathVariable Integer reportId) {
         ReportEntity report = reportRepository.findById(reportId).orElse(null);
 
+        System.out.println("Reportsss Heloo there");
+
         if (report == null) {
             return ResponseEntity.notFound().build();
         }
